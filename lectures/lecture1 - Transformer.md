@@ -14,12 +14,12 @@ Understand the foundations of transformer architectures and why they became the 
 
 ## 🧠 Core Concepts
 
-### NLP overview
+## NLP overview
 
-#### Definition and Categories
+### Definition and Categories
 Natural Language Processing: Computing things with text
 
-##### Classifikation
+#### Classifikation
 ```mermaid
 graph LR
     A[Input text] --> B[Model]
@@ -32,7 +32,7 @@ We want to predict something:
 - language detection -> knowing in what language the person writes
 - Topic modelling -> knowing what the text is about
 
-##### "Multi"-classification
+#### "Multi"-classification
 ```mermaid
 graph LR
     A[Input text] --> B[Model]
@@ -43,7 +43,7 @@ graph LR
 - Dependency parsing -> figuring out how the words in a sentence relate to each other
 - Constitunency parsing -> figuring out how the words in a sentence group together
 
-##### Generation
+#### Generation
 ```mermaid
 graph LR
     A[Input text] --> B[Model]
@@ -54,9 +54,9 @@ graph LR
 - Summarization -> summarizing a long text into a shorter one
 - Text generation -> generating new text (e.g. story, code, email etc.)
 
-#### Example NLP tasks:
+### Example NLP tasks:
 
-##### NLP task 1: Sentiment extraction
+#### NLP task 1: Sentiment extraction
 ```mermaid
 graph LR
     A[This teddy bear is SO CUTE!] --> B[Model]
@@ -74,7 +74,7 @@ Why all these metrics?
 Sometimes you have datasets, which are very unbalanced. (e.g. 95% positive reviews and only 5% negative reviews))
 -> can lead to a model that always predicts the majority class, which can give you a high accuracy but a very low precision and recall for the minority class.
 
-##### NLP task 2: Name entity recognition (NER)
+#### NLP task 2: Name entity recognition (NER)
 ```mermaid
 graph LR
     A[This teddy bear is reading...] --> B[Model]
@@ -90,7 +90,7 @@ graph LR
  - Recall -> percentage of actual correct labels that were correctly predicted
  - F1 score -> harmony of precision and recall
 
-##### NLP task 3: Machine translation
+#### NLP task 3: Machine translation
  ```mermaid
 graph LR
     A[A cute teddy bear is reading] --> B[Model]
@@ -104,6 +104,39 @@ Evaluation:
 - BLEU(Bilingual Evaluation Understudy) -> quality of the translated text (similar to precision)
 - ROUGE(Recall-Oriented Understudy for Gisting Evaluation) -> quality of the generated text (similar to recall)
 - Perplexity -> how well the model predicts the next word in the sequence (lower is better)
+
+### High-level timeline
+- 1980s: Recurrent neural networks (RNNs)
+- 1997: Long Short-Term Memory (LSTM) -> theoretical foundation for transformers
+- 2013: Word2Vec -> computing meaningful embeddings
+- 2017: Transformers -> Lots of data and growing compute power
+- 2020: Large Language Models (LLMs) -> GPT-3, BERT, etc.
+
+---
+## Tokenization
+
+### Definition
+Tokenization is the process of breaking down text into smaller units called tokens.
+
+### Methods
+Example: "A cute teddy bear is reading."
+| Method | Example tokens | Pros | Cons |
+|---|---|---|---|
+| Arbitrary | `[A]` `[cute]` `[teddy bear]` `[is]` `[reading]` `.` | Simple segmentation; flexible | Inconsistent units; ambiguous semantics |
+| Word-level | `[A]` `[cute]` `[teddy]` `[bear]` `[is]` `[reading]` `.` | Intuitive; human-readable tokens | Large vocabulary; out-of-vocabulary (OOV) problem |
+| Sub-word-level | `[A]` `[cute]` `[ted]` `[##dy]` `[bear]` `[is]` `[read]` `[##ing]` `.` | Handles OOV via roots; compact vocabulary | Longer token sequences due to splits |
+| Character-level | `[A]` `[ ]` `[c]` `[u]` `[t]` `[e]` `...` | No OOV; models morphology | Very long sequences; higher compute and memory |
+
+## Word representation
+
+## RNNs
+
+## Self-Attention Mechanism
+
+## Transformer Architecture
+
+## End-to-End Example
+
 
 
 - ChatGPT
@@ -119,6 +152,7 @@ Evaluation:
 
 #### Definition
 Attention allows the model to focus on the most relevant parts of the input sequence.
+
 
 #### Why It Matters
 - Handles long context better
@@ -327,3 +361,6 @@ print(response.choices[0].message.content)
 ## ⭐ One-Sentence Summary
 
 Transformers use attention mechanisms to efficiently process and understand sequences, forming the foundation of modern large language models.
+
+---
+
