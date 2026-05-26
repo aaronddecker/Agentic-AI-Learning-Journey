@@ -2,7 +2,7 @@
 
 > Source: https://www.youtube.com/watch?v=Ub3GoFaUcds&list=PLoROMvodv4rOCXd21gf0CF4xr35yINeOy  
 > Date: 2026-05-26
-> Duration: 
+> Duration: 1:41:49
 
 ---
 
@@ -53,6 +53,31 @@ graph LR
 - Question answering -> answering based on given content
 - Summarization -> summarizing a long text into a shorter one
 - Text generation -> generating new text (e.g. story, code, email etc.)
+
+#### NLP task 1: Sentiment extraction
+```mermaid
+graph LR
+    A[This teddy bear is SO CUTE!] --> B[Model]
+    B --> C((+))
+```
+Datasets:
+- Review/critique data like IMDB critiques, Amazon reviews, Twitter etc.
+Evaluation:
+- Accuracy -> percentage of correct predictions
+- Precision -> precentage of correct predictions that are ACTUALLY positive
+- Recall -> percentage of actual positives that were correctly predicted
+- F1 score -> harmony of precision and recall, so it gives a good overall picture of the model's performance
+
+Why all these metrics?
+Sometimes you have datasets, which are very unbalanced. (e.g. 95% positive reviews and only 5% negative reviews))
+-> can lead to a model that always predicts the majority class, which can give you a high accuracy but a very low precision and recall for the minority class.
+
+#### NLP task 2: Name entity recognition (NER)
+```mermaid
+graph LR
+    A[This teddy bear is reading...] --> B[Model]
+    B --> C[A cute ((teddy bear)) is reading...]
+```
 
 - ChatGPT
 - AI copilots
