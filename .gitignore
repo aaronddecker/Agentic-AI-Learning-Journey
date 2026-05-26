@@ -16,7 +16,7 @@ venv/
 .vscode/
 
 # Visual Studio
-.vs
+.vs/
 
 # macOS
 .DS_Store
