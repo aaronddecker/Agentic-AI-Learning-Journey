@@ -36,7 +36,7 @@ We want to predict something:
 ```mermaid
 graph LR
     A[Input text] --> B[Model]
-    B --> C["Input text<br/>────  ────<br/>⑤  ①"]
+    B --> C["Input text<br/>────    ────<br/>⑤  ①"]
 ```
 - Named entity recognition (NER) -> extracting diffrent entities from the text (e.g. people, places, time)
 - Part of speech tagging -> figuring out which word is a noun, verb, adjective etc.
