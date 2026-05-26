@@ -16,10 +16,10 @@ Understand the foundations of transformer architectures and why they became the 
 
 ### NLP overview
 
-#### Definition
+#### Definition and Categories
 Natural Language Processing: Computing things with text
 
-#### Classifikation
+##### Classifikation
 ```mermaid
 graph LR
     A[Input text] --> B[Model]
@@ -32,7 +32,7 @@ We want to predict something:
 - language detection -> knowing in what language the person writes
 - Topic modelling -> knowing what the text is about
 
-#### "Multi"-classification
+##### "Multi"-classification
 ```mermaid
 graph LR
     A[Input text] --> B[Model]
@@ -43,7 +43,7 @@ graph LR
 - Dependency parsing -> figuring out how the words in a sentence relate to each other
 - Constitunency parsing -> figuring out how the words in a sentence group together
 
-#### Generation
+##### Generation
 ```mermaid
 graph LR
     A[Input text] --> B[Model]
@@ -54,7 +54,9 @@ graph LR
 - Summarization -> summarizing a long text into a shorter one
 - Text generation -> generating new text (e.g. story, code, email etc.)
 
-#### NLP task 1: Sentiment extraction
+#### Example NLP tasks:
+
+##### NLP task 1: Sentiment extraction
 ```mermaid
 graph LR
     A[This teddy bear is SO CUTE!] --> B[Model]
@@ -72,12 +74,37 @@ Why all these metrics?
 Sometimes you have datasets, which are very unbalanced. (e.g. 95% positive reviews and only 5% negative reviews))
 -> can lead to a model that always predicts the majority class, which can give you a high accuracy but a very low precision and recall for the minority class.
 
-#### NLP task 2: Name entity recognition (NER)
+##### NLP task 2: Name entity recognition (NER)
 ```mermaid
 graph LR
     A[This teddy bear is reading...] --> B[Model]
     B --> C[A cute TEDDY BEAR is reading...]
 ```
+"Multi"-classification -> Input text and you predict multiple labels for each token in the text
+ 
+ Datasets:
+ - Annotated news articles, Wikipedia, CoNLL-2003, CoNLL++, etc.
+ Evaluation:
+ - Accuracy -> percentage of correctly labeled tokens
+ - Precision -> percentage of correctly labeled tokens that are ACTUALLY correct
+ - Recall -> percentage of actual correct labels that were correctly predicted
+ - F1 score -> harmony of precision and recall
+
+##### NLP task 3: Machine translation
+ ```mermaid
+graph LR
+    A[A cute teddy bear is reading] --> B[Model]
+    B --> C[Un ours en peluche mignon lit]
+```
+Generation -> Input Text and Output Text
+
+Datasets:
+- Popular language datasets like WMT'14, IWSLT, Europarl, etc.
+Evaluation:
+- BLEU(Bilingual Evaluation Understudy) -> quality of the translated text (similar to precision)
+- ROUGE(Recall-Oriented Understudy for Gisting Evaluation) -> quality of the generated text (similar to recall)
+- Perplexity -> how well the model predicts the next word in the sequence (lower is better)
+
 
 - ChatGPT
 - AI copilots
@@ -85,8 +112,6 @@ graph LR
 - AI agents
 - Translation systems
 
-#### Notes
-- 
 
 ---
 
