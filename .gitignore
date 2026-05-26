@@ -1,0 +1,48 @@
+# Python
+__pycache__/
+*.py[cod]
+*.pyo
+*.pyd
+
+# Virtual Environments
+venv/
+.env/
+.venv/
+
+# Environment Variables
+.env
+
+# VS Code
+.vscode/
+
+# Visual Studio
+.vs/
+
+# macOS
+.DS_Store
+
+# Windows
+Thumbs.db
+
+# Jupyter Notebooks
+.ipynb_checkpoints/
+
+# Logs
+*.log
+
+# Build / Distribution
+build/
+dist/
+
+# Ollama / AI temp files
+*.gguf
+
+# Node Modules (if needed later)
+node_modules/
+
+# Coverage
+.coverage
+htmlcov/
+
+# Pytest
+.pytest_cache/
