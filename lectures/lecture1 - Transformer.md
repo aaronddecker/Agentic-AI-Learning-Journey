@@ -47,7 +47,7 @@ graph LR
 ```mermaid
 graph LR
     A[Input text] --> B[Model]
-    B --> [Output text]
+    B --> C[Output text]
 ```
 - Machine translation -> translating text from one language to another
 - Question answering -> answering based on given content
