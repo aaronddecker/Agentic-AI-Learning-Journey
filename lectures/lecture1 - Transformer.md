@@ -76,7 +76,7 @@ Sometimes you have datasets, which are very unbalanced. (e.g. 95% positive revie
 ```mermaid
 graph LR
     A[This teddy bear is reading...] --> B[Model]
-    B --> C[A cute ((teddy bear)) is reading...]
+    B --> C[A cute TEDDY BEAR is reading...]
 ```
 
 - ChatGPT
