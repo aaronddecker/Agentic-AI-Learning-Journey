@@ -128,8 +128,62 @@ Example: "A cute teddy bear is reading."
 | Character-level | `[A]` `[ ]` `[c]` `[u]` `[t]` `[e]` `...` | No OOV; models morphology | Very long sequences; higher compute and memory |
 
 ## Word representation
+### Motivation
+- Naive (one-hot) encoding is sparse and doesn't capture meaning or relationships between words.
+- What you want: Learned embeddings are dense, low-dimensional vectors that capture semantic meaning and relationships between words.
 
-## RNNs
+### Example: Word2vec
+Overview:
+- Neural network with a proxy task (e.g. predict context words from a target word or vice versa) over billions of tokens to learn from
+- Learns an embedding layer that captures semantic relationships
+
+Proxy tasks:
+- Continuous Bag of Words (CBOW): Predict a target word based on its context words.
+- Skip-gram: Predict context words based on a target word.
+
+Arcitecture:
+| input | 5 | sice V |
+|---|---|---|
+| hidden | 2 | size d |
+| output | 5 | size V |
+
+Example with predicting the next word:
+| Input | Output |
+|---|---|
+| [A] cute teddy bear is reading | A [cute] teddy bear is reading |
+
+Do that process for all the words...
+
+Explanation: The model learns to predict the next word in the sequence, and in doing so, it learns meaningful embeddings for each word based on their context.
+
+## RNNs (Recurrent Neural Networks)
+Overview:
+- Class of neural networks where connections from a temporal sequence are used to capture dependencies between elements
+
+General form:
+1. Token A -> Hidden State 1 -> Token B
+2. Token B -> Hidden State 2 -> Token C
+3. Token C -> Hidden State 3 -> Token D ...
+
+RNNs are used in all Transformer-based models (slide 62), but they have some limitations:
+- long-term dependencies are hard to capture (e.g. "The cat that sat on the mat is sleeping" -> "The cat is sleeping")
+
+### Long Short-Term Memory (LSTM)
+Overview:
+- Uses a more structured approach in the hidden state to capture long-term dependencies better
+
+General form:
+1. Input gate: decides which information to keep from the current input
+2. hidden state: captures the current state of the sequence
+3. output gate: decides which information to output to the next step
+
+### Summary of main Methods
+| Method | Pros | Cons |
+|---|---|---|
+| Word2vec |  Very efficient; captures semantic relationships | Doesn't capture context; static embeddings |
+| Recurrent Neural Networks (RNN, LSTM) | Word order matters; can capture some context | long range dependencies; slow cumputations |
+
+So we need a model that can capture long-term dependencies and is efficient to train and infer on large datasets. --> Attention (slide 67)
 
 ## Self-Attention Mechanism
 
